@@ -21,46 +21,104 @@ public class Test1 {
 	
 	AppiumDriver driver;
 	
-  @Test
-  public void register() {
-	 MobileElement register =  (MobileElement) driver.findElement(By.id("com.example.work.thetestingworld:id/register"));
-	 register.click();
-	 MobileElement firstName = (MobileElement) driver.findElement(By.id("com.example.work.thetestingworld:id/name"));
-	 MobileElement LastName = (MobileElement) driver.findElement(By.id("com.example.work.thetestingworld:id/last_name"));
-	 firstName.sendKeys("buni");
-	 LastName.sendKeys("Amgai");
-	 MobileElement click = (MobileElement) driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.CheckBox[1]"));
-	 click.click();
-	 MobileElement dob = (MobileElement) driver.findElement(By.id("com.example.work.thetestingworld:id/dob"));
-	 dob.click();
-	 MobileElement dateClick = (MobileElement) driver.findElement(By.id("android:id/button1"));
-	 dateClick.click();
-	 MobileElement onoff = (MobileElement) driver.findElement(By.id("com.example.work.thetestingworld:id/toggleOnOff"));
-	 onoff.click();
-	 MobileElement country = (MobileElement) driver.findElement(By.id("com.example.work.thetestingworld:id/country"));
-	 country.click();
-	 MobileElement countryClick = (MobileElement) driver.findElement(By.id("com.example.work.thetestingworld:id/country_list"));
-	 countryClick.click();
-	 MobileElement usa = (MobileElement) driver.findElement(By.xpath("//*[contains(@text, \"US\")]"));
-	 usa.click();
-	 MobileElement email = (MobileElement) driver.findElement(By.id("com.example.work.thetestingworld:id/email"));
-	 email.sendKeys("gurkhalies@hotmail.com");
-	 MobileElement mobile = (MobileElement) driver.findElement(By.id("com.example.work.thetestingworld:id/mobile"));
-	 mobile.sendKeys("7075574583");
-	 MobileElement checkBox = (MobileElement) driver.findElement(By.xpath("//*[contains(@text, \"Send useful Technical Content\")]"));
-	 checkBox.click();
-	 MobileElement female = (MobileElement) driver.findElement(By.xpath("//*[contains(@text, \"Female\")]"));
-	 female.click();
-	 MobileElement submit = (MobileElement) driver.findElement(By.id("com.example.work.thetestingworld:id/submit"));
-	 submit.click();
-	 
-	 MobileElement LandingPage = (MobileElement) driver.findElement(By.xpath("//*[contains(@text, \"Thanks for submiting\")]"));
-	 String actual = LandingPage.getAttribute("text");
-	 System.out.println(actual);
-	 String expected = "Thanks for submiting";
-	 Assert.assertEquals(actual, expected);
-	 
+  @Test(enabled=false)
+  public void createAccount() {
+	  
+		 MobileElement Notifications = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/confirm_button"));
+		 
+		 MobileElement location = (MobileElement) driver.findElement(By.id("com.android.permissioncontroller:id/permission_allow_always_button"));
+		 
+		 MobileElement signIn = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/tv_signin"));
+		
+		 MobileElement createAccount = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/btn_join_free"));
+		 
+		 MobileElement firstName = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/et_firstName"));
+		 
+		 MobileElement lastName = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/et_lastName"));
+		 
+		 MobileElement email = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/et_email"));
+		
+		 MobileElement password = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/edit_password"));
+		 
+		 MobileElement dob = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/et_dob"));
+		 
+		 MobileElement one = (MobileElement) driver.findElement(By.xpath("//android.view.View[@content-desc=\"01 April 2020\"]"));
+		 
+		 MobileElement ok = (MobileElement) driver.findElement(By.xpath("//*[contains(@text, \"OK\")]"));
+		
+		 MobileElement createAccountClick = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/btn_join_free"));
+		 
+		 
+		 
+		 Notifications.click();
+		 location.click();
+		 signIn.click();
+		 createAccount.click();
+		 firstName.sendKeys("ramey");
+		 lastName.sendKeys("jpt");
+		 email.sendKeys("harkey@hotmail.com");
+		 password.sendKeys("Simple@123"); 
+		 dob.click();
+		 one.click();
+		 ok.click();
+		 createAccountClick.click();
+
+			
   }
+  
+@Test(enabled=true)		 
+public void invalidSignIn() {
+		MobileElement Notifications = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/confirm_button"));
+		
+		MobileElement location = (MobileElement) driver.findElement(By.id("com.android.permissioncontroller:id/permission_allow_always_button"));
+		
+		MobileElement SignIn = (MobileElement) driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TextView\n" + 
+				""));
+		
+		MobileElement email = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/edit_email"));
+		
+		MobileElement password = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/edit_password"));
+		
+		MobileElement btnSignIn = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/btn_sign_in"));
+		
+		String actual = driver.findElement(By.id("com.spirit.customerapp:id/tv_error_msg")).getText();
+		String expected = "Sorry, this email address could not be found.";
+		
+		
+		Notifications.click();
+		location.click();
+		SignIn.click();
+		email.sendKeys("lurkey@hotmail.com");
+		password.sendKeys("Simple@123");
+		btnSignIn.click();
+		Assert.assertEquals(actual, expected);
+	
+}
+
+@Test(enabled=true)
+public void validSignIn() {
+
+	MobileElement email = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/edit_email"));
+	
+	MobileElement password = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/edit_password"));
+	
+	MobileElement btnSignIn = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/btn_sign_in"));
+	
+	MobileElement TouchIdAllow = (MobileElement) driver.findElement(By.id("com.spirit.customerapp:id/confirm_button"));
+	
+	 Boolean actual = driver.findElement(By.id("com.spirit.customerapp:id/iv_user_image")).isDisplayed();
+	 Boolean expected = true;
+	
+	
+	email.clear();
+	email.sendKeys("gurkhalies@hotmail.com");
+	password.sendKeys("Simple@123");
+	btnSignIn.click();
+	TouchIdAllow.click();
+	Assert.assertEquals(actual,expected );
+	
+}
+
   @BeforeClass
   public void beforeClass() throws MalformedURLException {
 	  DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
@@ -68,8 +126,8 @@ public class Test1 {
 	  desiredCapabilities.setCapability("udid", "96DAX0GYK7");
 	  desiredCapabilities.setCapability("platformName", "Android");
 	  desiredCapabilities.setCapability("platformVersion", "10");
-	  desiredCapabilities.setCapability("appPackage", "com.example.work.thetestingworld");
-	  desiredCapabilities.setCapability("appActivity", "com.example.work.thetestingworld.Splash");
+	  desiredCapabilities.setCapability("appPackage", "com.spirit.customerapp");
+	  desiredCapabilities.setCapability("appActivity", "com.spirit.enterprise.guestmobileapp.UI.Main.SplashActivity");
 	 // desiredCapabilities.setCapability("app", "C:\\Users\\bkoiral1\\Downloads\\TheTestingWorld.apk");
 		
 		URL url = new URL("http://0.0.0.0:4723/wd/hub");
@@ -83,7 +141,8 @@ public class Test1 {
 
   @AfterClass
   public void afterClass() {
-	  driver.quit();
+	  System.out.println("application now closed...");
+	 driver.quit();
   }
 
 }

@@ -5,9 +5,9 @@
     <classes>
       <class name="qa.mobile.Test1">
         <methods>
-          <include name="register"/>
           <include name="afterClass"/>
           <include name="beforeClass"/>
+          <include name="validSignIn"/>
         </methods>
       </class> <!-- qa.mobile.Test1 -->
     </classes>

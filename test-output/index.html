@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\bkoiral1\AppData\Local\Temp\testng-eclipse--703830437\testng-customsuite.xml</span>
+                    <span>C:\Users\bkoiral1\AppData\Local\Temp\testng-eclipse--2114688748\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,12 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="qa.mobile.Test1" hash-for-method="register">register</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="qa.mobile.Test1" hash-for-method="invalidSignIn">invalidSignIn</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="qa.mobile.Test1" hash-for-method="validSignIn">validSignIn</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -125,9 +130,16 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="register">
-                  </a> <!-- register -->
-                  <span class="method-name">register</span>
+                  <a name="invalidSignIn">
+                  </a> <!-- invalidSignIn -->
+                  <span class="method-name">invalidSignIn</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validSignIn">
+                  </a> <!-- validSignIn -->
+                  <span class="method-name">validSignIn</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -135,7 +147,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\bkoiral1\AppData\Local\Temp\testng-eclipse--703830437\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\bkoiral1\AppData\Local\Temp\testng-eclipse--2114688748\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -184,16 +196,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'register')
+data.setCell(0, 1, 'invalidSignIn')
 data.setCell(0, 2, 'qa.mobile.Test1')
-data.setCell(0, 3, 21104);
+data.setCell(0, 3, 6921);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'validSignIn')
+data.setCell(1, 2, 'qa.mobile.Test1')
+data.setCell(1, 3, 5748);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 21 seconds</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -208,9 +224,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">qa.mobile.Test1</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">createAccount</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -225,12 +248,16 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">register</span>
-                <span class="method-start">13705 ms</span>
+                <span class="method-name">invalidSignIn</span>
+                <span class="method-start">13994 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validSignIn</span>
+                <span class="method-start">20920 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">34812 ms</span>
+                <span class="method-start">26670 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
